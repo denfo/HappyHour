@@ -31,8 +31,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.ScrollingMovementMethod;
 import android.view.ViewGroup;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.content.Intent;
+import android.widget.Button;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -88,6 +91,7 @@ public class MainActivity extends Activity {
                 .setBackOff(new ExponentialBackOff())
                 .setSelectedAccountName(settings.getString(PREF_ACCOUNT_NAME, null));
     }
+
 
 
     /**

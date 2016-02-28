@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
+    <!--
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,8 +27,31 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Google Calendar API Android Quickstart"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainScreen"
+            android:label="Main Page">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".MainScreen"></activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".setMeet" />
+
+        <receiver
+            android:name="com.contactReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.masonbrothers.nwhacks.chosenContacts"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
